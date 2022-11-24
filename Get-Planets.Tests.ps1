@@ -82,10 +82,12 @@ Describe 'Get-Planet' {
       $planets | Should -Be $null
     }
 
+  Context "Filtering human logic" {
     It 'Pluto is not part of our Solar System' {
       $allPlanets = Get-Planet
       $plutos = $allPlanets | Where-Object Name -EQ 'Pluto'
       $plutos.Count | Should -Be 0
     }
+  }
   }
 }
